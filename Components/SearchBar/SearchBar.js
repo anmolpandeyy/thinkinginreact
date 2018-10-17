@@ -5,9 +5,16 @@ class SearchBar extends Component {
   render() {
     return (
       <View style={styles.searchBarContainer}>
-        <TextInput style={styles.textInput} placeholder="Search..." />
+        <TextInput
+          style={styles.textInput}
+          placeholder="Search..."
+          value={this.props.filterText}
+        />
         <View style={styles.checkBoxInRow}>
-          <CheckBox value={false} onValueChange={() => console.log("hello")} />
+          <CheckBox
+            value={this.props.inStockOnly}
+            onValueChange={this.props.checkBoxHandler}
+          />
           <Text style={{ fontSize: 20 }}>Only show products in stock</Text>
         </View>
       </View>
