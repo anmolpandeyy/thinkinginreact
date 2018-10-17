@@ -6,6 +6,7 @@ class SearchBar extends Component {
     return (
       <View style={styles.searchBarContainer}>
         <TextInput
+          onChange={this.props.textInputChangeHandler}
           style={styles.textInput}
           placeholder="Search..."
           value={this.props.filterText}

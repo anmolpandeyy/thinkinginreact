@@ -4,7 +4,6 @@ import SearchBar from "./Components/SearchBar/SearchBar";
 import ProductTable from "./Components/ProductTable/ProductTable";
 import ProductCategory from "./Components/ProductCategory/ProductCategory";
 import ProductRow from "./Components/ProductRow/ProductRow";
-import { filter } from "rsvp";
 
 class App extends Component {
   constructor(props) {
@@ -14,6 +13,12 @@ class App extends Component {
       inStockOnly: false
     };
   }
+
+  textInputChangeHandler = e => {
+    this.setState({
+      filterText: e.target.value
+    });
+  };
 
   checkBoxHandler = () => {
     this.setState(prevState => {
@@ -27,6 +32,7 @@ class App extends Component {
     return (
       <View style={styles.container}>
         <SearchBar
+          textInputChangeHandler={this.textInputChangeHandler}
           checkBoxHandler={this.checkBoxHandler}
           filterText={filterText}
           inStockOnly={inStockOnly}
