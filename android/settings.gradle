@@ -1,0 +1,3 @@
+rootProject.name = 'thinkinginreact'
+
+include ':app'
