@@ -15,7 +15,8 @@ const styles = StyleSheet.create({
     margin: 5,
     borderWidth: 2,
     borderColor: "turquoise",
-    justifyContent: "center"
+    justifyContent: "flex-start",
+    paddingLeft: 5
   },
   productCategory: {
     fontWeight: "bold",
